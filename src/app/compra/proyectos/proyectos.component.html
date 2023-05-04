@@ -1,0 +1,20 @@
+
+<div class="container"><!--
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker
+      *ngFor="let marker of markers"
+      [latitude]="marker.latitude"
+      [longitude]="marker.longitude"
+      (markerClick)="onMarkerClick(marker)"
+    ></agm-marker>
+  </agm-map>-->
+
+  <form [formGroup]="markerForm" (ngSubmit)="onSubmit()" *ngIf="selectedMarker">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" type="text" required />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+    <button mat-raised-button color="warn" (click)="onDelete()">Eliminar</button>
+  </form>
+</div>

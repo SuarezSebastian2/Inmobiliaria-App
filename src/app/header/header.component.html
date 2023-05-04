@@ -1,0 +1,17 @@
+<!-- header.component.html -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Inmobiliaria</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="compraMenu">Compra</button>
+    <button mat-button [matMenuTriggerFor]="ventaMenu">Venta</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #compraMenu="matMenu">
+  <button mat-menu-item routerLink="/compra/proyectos">Proyectos</button>
+</mat-menu>
+
+<mat-menu #ventaMenu="matMenu">
+  <button mat-menu-item routerLink="/venta/estadisticas">Estadísticas</button>
+</mat-menu>
